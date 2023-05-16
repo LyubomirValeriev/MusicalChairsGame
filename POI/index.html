@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Musical Chairs - Game of Thrones Edition</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <canvas id="birthday"></canvas>
+    <div class="game-container">
+        <h1 >Musical Chairs Game</h1>
+        <audio id="music"   src="music/Opening Credits Game of Thrones Season 8 (HBO).mp3"></audio>
+        <div class="chair-container">
+        <div class="kur" >
+            <img  id="ironThrone" src="/images/iron-throne-daenerys-targaryen-sandor-clegane-game-of-thrones-throne.jpg">
+             </div>
+       </div>
+        <div class="button-container">
+            <button id="start-button">Start</button>
+            <button id="stop-button">Stop</button>
+            <button id="reset-button">Reset</button>
+        </div>
+    </div>
+
+    <div class="popup-container-images" id="popup-container-images">
+        <div class="popup">
+            <legend>Select options</legend>
+            <ul>
+                <li>
+                  <input type="checkbox" id="myCheckbox1" />
+                  <label for="myCheckbox1">
+                    <img src="images/GoT - got1.png" />
+                    <div class="help-tip">
+                        <p>Rhaenyra Targaryen<br />
+                          Queen Rhaenyra Targaryen is the daughter and only surviving child of King Viserys I Targaryen and his first wife, Queen Aemma Arryn. She disputes the claim of her younger half-brother Aegon II, using the style Queen of the Andals and the Rhoynar and the First Men, Lady of the Seven Kingdoms, and Protector of the Realm. A dragonrider, her mount is the she-dragon Syrax. 
+                        </p>
+                    </div>
+                </label>
+                </li>
+                <li>
+              
+                  <input type="checkbox" id="myCheckbox2" />
+                 
+                  <label for="myCheckbox2">
+                     <img src="images/GoT - got2.png" />
+                     <div class="help-tip">
+                        <p>Tyrion Lannister<br />
+                            Called "The Imp," because of his small stature, he is the youngest son of Tywin Lannister, the richest lord in the Seven Kingdoms and younger brother to Queen Cersei and Ser Jaime Lannister. What he lacks in height, he makes up in wit.
+                        </p>
+                    </div>
+                </label>
+                </li>
+                <li>
+                  <input type="checkbox" id="myCheckbox3" />
+                  <label for="myCheckbox3">
+                    <img src="images/GoT - got3.png" />
+                    <div class="help-tip">
+                        <p>Daenerys Targaryen<br />
+                            Princess of House Targaryen, living in exile in Essos with her brother, Viserys.
+                        </p>
+                    </div>
+                  </label>
+                </li>
+
+                <li>
+                    <input type="checkbox" id="myCheckbox4" />
+                    <label for="myCheckbox4">
+                      <img src="images/GoT - got4.png" />
+                      <div class="help-tip">
+                          <p>Jon Snow<br />Ned's bastard son. He joins the Night’s Watch, following in the footsteps of his Uncle Benjen. His direwolf is named Ghost.
+                          </p>
+                      </div>
+                    </label>
+                  </li>
+
+                  <li>
+                    <input type="checkbox" id="myCheckbox5" />
+                    <label for="myCheckbox5">
+                      <img src="images/GoT - got5.png" />
+                      <div class="help-tip">
+                          <p>Daemon Targaryen<br />
+                            Prince Daemon Targaryen is a prince of the Targaryen dynasty, and the younger brother of King Viserys I Targaryen. He is the uncle of Queen Rhaenyra Targaryen, and later becomes her second husband and king consort. 
+                             
+                          </p>
+                      </div>
+                    </label>
+                  </li>
+              </ul>
+          <button id="popup-images-close-btn" >Close</button>
+        </div>
+    </div>
+
+    <div class="popup-container" id="popup-container">
+        <div class="popup">
+          <h2 id="finalChairH">Only one chair left!</h2>
+          <div class="popup-image-c">
+            <img class="popup-image-cont" id="kurTest">
+          </div>
+          <button id="popup-close-btn" >Close</button>
+        </div>
+    </div>
+   
+    <script src="script.js"></script>
+</body>
+
+</html>

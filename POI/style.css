@@ -1,0 +1,293 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chair-container {
+  
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    /* add */
+    top: 65px;
+}
+/* Chair animation and style */ 
+.chair {
+   width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 10px;
+    opacity: 1;
+    /* Set the initial opacity of the chairs to 1 */
+   /* transition: opacity 1s ease;
+     Add a transition effect for the opacity property */
+     /* add */
+     animation: moveChair 10s linear infinite;
+     position: absolute;
+}
+
+.chair.hidden {
+    opacity: 0;
+    /* Set the opacity of hidden chairs to 0 */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    margin: 0 10px;
+}
+@keyframes moveChair {
+    0% {
+      transform: translate(0, 150px);
+    }
+    100% {
+      transform: translate(0, 150px) rotate(360deg);
+    }
+  }
+
+.chair.paused {
+    animation-play-state: paused;
+}
+canvas{
+    display:block;   
+    top: 0;
+  left: 0;
+  z-index: -1;
+  position: fixed;
+}
+body{
+    margin: 0;
+}
+/*Popup style  */ 
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+  }
+  
+  .popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+  }
+  
+  .popup-close-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  canvas {
+    display: block;
+  }
+
+/* Throne style */ 
+ #ironThrone {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 140px -40px;
+  position: absolute;
+ }
+ #kurTest{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: -112px -49px;
+  position: absolute;
+ }
+ #finalChairH{
+  
+    border-bottom-width: 100px;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+  
+ }
+
+ /* image popup */
+ ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+}
+
+input[type="checkbox"][id^="myCheckbox"] {
+  display: none;
+}
+
+label {
+  border: 1px solid #fff;
+  padding: 10px;
+  display: block;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+}
+
+label:before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  border: 1px solid rgb(222, 33, 33);
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+
+label img {
+  height: 100px;
+  width: 100px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+
+:checked + label {
+  border-color: #ddd;
+}
+
+:checked + label:before {
+  content: "✓";
+  background-color: grey;
+  transform: scale(1);
+}
+
+:checked + label img {
+  transform: scale(0.9);
+  /* box-shadow: 0 0 5px #333; */
+
+}
+.popup-container-images {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+}
+ /* The icon */
+.help-tip{  
+  position: absolute;
+  top: 19px;
+  right: -8px;
+	transform: translate(-50%, -50%);
+	margin: auto;
+	text-align: center;
+	border: 2px solid #444;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
+	line-height: 23px;
+	cursor: default;
+  z-index: 1;
+}
+
+.help-tip:before{
+    content:'?';
+    font-family: sans-serif;
+    font-weight: normal;
+    color:#444;
+}
+
+.help-tip:hover p{
+    display:block;
+    transform-origin: 100% 0%;
+    -webkit-animation: fadeIn 0.3s ease;
+    animation: fadeIn 0.3s ease;
+}
+
+/* The tooltip */
+.help-tip p {    
+	display: none;
+	font-family: sans-serif;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	text-align: center;
+	background-color: #FFFFFF;
+	padding: 12px 16px;
+	width: 178px;
+	height: auto;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 5%);
+	border-radius: 3px;
+/* 	border: 1px solid #E0E0E0; */
+	box-shadow: 0 0px 20px 0 rgba(0,0,0,0.1);
+	color: #37393D;
+	font-size: 12px;
+	line-height: 18px;
+ 
+
+}
+
+/* The pointer of the tooltip */
+.help-tip p:before { 
+	position: absolute;
+	content: '';
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-bottom-color:#FFFFFF;
+	top: -9px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  
+}
+
+ /* Prevents the tooltip from being hidden */
+.help-tip p:after {
+	width: 10px;
+	height: 40px;
+	content:'';
+	position: absolute;
+	top: -40px;
+	left: 0;
+}
+/* CSS animation */
+@-webkit-keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:100%; }
+}
+
+@keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:100%; }
+}
